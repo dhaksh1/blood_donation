@@ -1,0 +1,34 @@
+:root {
+  --main-color: #eb4d4b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: url('C:\Users\ELCOT\Desktop\src\images\can-donate.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Rest of your CSS styles remain unchanged */

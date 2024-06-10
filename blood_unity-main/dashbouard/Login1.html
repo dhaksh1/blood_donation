@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login page</title>
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'>
+  <link rel="stylesheet" href="Login.css">
+  <script>
+    // Add event listener to the login form
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  
+  // Retrieve input values
+  var username = document.getElementById("user").value;
+  var password = document.getElementById("pass").value;
+  
+  // Retrieve user data from local storage
+  var storedUserData = JSON.parse(localStorage.getItem("userData"));
+  
+  // Check if user exists and password matches
+  if (storedUserData && storedUserData.username === username && storedUserData.password === password) {
+    alert("Login successful!"); // Replace with your desired action upon successful login
+    window.location.href = "DashBoard.html"; // Redirect to home page after successful login
+  } else {
+    alert("Invalid username or password!"); // Replace with your desired action upon failed login
+  }
+});
+
+  </script>
+</head>
+<body>
+<form id="loginForm">
+<div class="wrapper">
+  <div class="login_box">
+    <div class="login-header">
+      <span>Login</span>
+    </div>
+
+    <div class="input_box">
+      <input type="text" id="user" class="input-field" required>
+      <label for="user" class="label">Username</label>
+      <i class="bx bx-user icon"></i>
+    </div>
+
+    <div class="input_box">
+      <input type="password" id="pass" class="input-field" required>
+      <label for="pass" class="label">Password</label>
+      <i class="bx bx-lock-alt icon"></i>
+    </div>
+
+    <div class="remember-forgot">
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember me</label>
+      </div>
+
+      <div class="forgot">
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+
+    <div class="input_box">
+      <input type="submit" class="input-submit" value="Login">
+    </div>
+  
+
+    <div class="register">
+      <span>Don't have an account? <a href="Register1.html">Register</a></span>
+    </div>
+  </div>
+</div>
+</form>
+<!-- partial -->
+  
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    
+    // Retrieve input values
+    var username = document.getElementById("user").value;
+    var password = document.getElementById("pass").value;
+    
+    // Retrieve user data from local storage
+    var storedUserData = JSON.parse(localStorage.getItem("userData"));
+    
+    // Check if user exists and password matches
+    if (storedUserData && storedUserData.username === username && storedUserData.password === password) {
+         // Replace with your desired action upon successful login
+      window.location.href = "DashBoard.html"; // Redirect to home page after successful login
+    } else {
+      alert("Invalid username or password!"); // Replace with your desired action upon failed login
+    }
+  });
+</script>
+
+</body>
+</html>
